@@ -96,25 +96,48 @@ body {
 
 .header-container {
   position: relative;
+  min-height: 100px;
 }
 
 .active-menu {
   position: relative;
   background-color: #a30022; /* Red background for active menu */
-  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%) ;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
   margin-top: -2px; /* Connect with the red strip exactly */
   border-bottom-left-radius: 26px;
   border-bottom-right-radius: 26px;
 }
 
-/* Use a different approach - create a pseudo-element that extends up to cover any gap */
+/* Use a pseudo-element that extends up to cover any gap */
 .active-menu::before {
   content: "";
   position: absolute;
-  top: -10px; /* Extend well above to ensure no gap */
+  top: -10px; /* Extend above to ensure no gap */
   left: 0;
   right: 0;
   height: 12px; /* Taller than needed to ensure overlap */
   background-color: #a30022;
   z-index: -1; /* Behind the text but in front of any white space */
 }
+
+/* Special styling for the logo with active-menu */
+/* .logo-menu {
+  padding-bottom: 20px !important;
+  clip-path:polygon(0 0, 100% 0, 85% 100%, 15% 100%) !important;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+} */
+
+.logo-menu::before {
+  top: -6px;
+  height: 8px;
+}
+
+/* Ensure the image doesn't get clipped */
+.logo-menu img {
+  position: relative;
+  z-index: 5;
+}
+
+
+
