@@ -210,7 +210,7 @@ export default function Home() {
                 src="/placeholder.svg?height=300&width=600"
                 alt="Location Map"
                 width={600}
-                height={300}
+                height={200}
                 className="w-full rounded-lg"
               />
             </div>
